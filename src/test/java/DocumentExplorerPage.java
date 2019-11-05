@@ -26,16 +26,14 @@ public class DocumentExplorerPage {
     public void clickAddNewCollection() {
         add.click();
     }
-    public void setName(String newname) {
-        name.val(newname);
+    public void setName(String newName) {
+        name.val(newName);
 
     }
     public void clickCreate() {
         create.click();
     }
-    public void clickCancel() {
-        cancel.click();
-    }
+
     public void clickUpload(File file) {
         upload.uploadFile(file);
 
@@ -52,7 +50,7 @@ public class DocumentExplorerPage {
     }
     public  void checkErrorMessage()
     {
-        error.getText().equals("Something went unexpectedly wrong. Try again. If the problem persists contact your administrator.");
+        error.shouldHave(Condition.text("Something went unexpectedly wrong. Try again. If the problem persists contact your administrator."));
     }
 
     public  void errorMessageIsAbsent()
