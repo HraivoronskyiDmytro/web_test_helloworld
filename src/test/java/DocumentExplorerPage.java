@@ -26,10 +26,12 @@ public class DocumentExplorerPage {
     public void clickAddNewCollection() {
         add.click();
     }
+
     public void setName(String newName) {
         name.val(newName);
 
     }
+
     public void clickCreate() {
         create.click();
     }
@@ -39,58 +41,52 @@ public class DocumentExplorerPage {
 
 
     }
+
     public void setSearchCollection() {
         searchCollection.val("test_xpath_gathering");
         firstCollection.shouldBe(Condition.text("test_xpath_gathering"));
 
     }
+
     public void setSearchDocument() {
         searchFiles.val("ZZZ");
 
     }
-    public  void checkErrorMessage()
-    {
+
+    public void checkErrorMessage() {
         error.shouldHave(Condition.text("Something went unexpectedly wrong. Try again. If the problem persists contact your administrator."));
     }
 
-    public  void errorMessageIsAbsent()
-    {
+    public void errorMessageIsAbsent() {
         error.shouldNot(Condition.visible);
     }
 
-    public void checkFirstCollectionName(String value)
-    {
+    public void checkFirstCollectionName(String value) {
         firstCollection.shouldHave(Condition.text(value));
     }
 
-    public void checkFirstDocumentName(String value)
-    {
+    public void checkFirstDocumentName(String value) {
         firstDocument.shouldHave(Condition.text(value));
     }
 
-    public void clickSortCollection()
-    {
+    public void clickSortCollection() {
         sortCollection.click();
     }
 
-    public void clickSortDocuments()
-    {
+    public void clickSortDocuments() {
         sortFiles.click();
     }
 
-    public void clickFirstCollection()
-    {
+    public void clickFirstCollection() {
         firstCollection.click();
         firstDocument.shouldBe(Condition.visible);
     }
 
-    public void uploadIsSuccess()
-    {
+    public void uploadIsSuccess() {
         successUpload.shouldBe(Condition.exist);
     }
 
-    public void uploadIsFailed()
-    {
+    public void uploadIsFailed() {
         failedUpload.shouldBe(Condition.exist);
     }
 

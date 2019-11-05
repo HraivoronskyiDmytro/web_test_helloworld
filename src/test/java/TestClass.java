@@ -1,4 +1,3 @@
-
 import org.junit.Test;
 
 import java.io.File;
@@ -8,19 +7,19 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestClass {
 
 
+    @Test
 
-        @Test
+    public void createExistingCollection() {
+        open("https://omniustest.omnius.com/trainer/ui/");
+        new LoginPage().login("testuser", "testuser");
+        new ConsolePage().clickAnnotate();
+        DocumentExplorerPage documentexplorer = new DocumentExplorerPage();
+        documentexplorer.clickAddNewCollection();
+        documentexplorer.setName("test_xpath_gathering");
+        documentexplorer.clickCreate();
+        documentexplorer.checkErrorMessage();
+    }
 
-        public void createExistingCollection() {
-            open("https://omniustest.omnius.com/trainer/ui/");
-            new LoginPage().login("testuser", "testuser");
-            new ConsolePage().clickAnnotate();
-            DocumentExplorerPage documentexplorer = new DocumentExplorerPage();
-            documentexplorer.clickAddNewCollection();
-            documentexplorer.setName("test_xpath_gathering");
-            documentexplorer.clickCreate();
-            documentexplorer.checkErrorMessage();
-        }
     @Test
     public void createNewCollection() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -32,6 +31,7 @@ public class TestClass {
         documentexplorer.clickCreate();
         documentexplorer.errorMessageIsAbsent();
     }
+
     @Test
     public void searchExistingCollection() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -55,6 +55,7 @@ public class TestClass {
 
 
     }
+
     @Test
     public void sortDocuments() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -70,6 +71,7 @@ public class TestClass {
 
 
     }
+
     @Test
     public void searchDocuments() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -111,6 +113,7 @@ public class TestClass {
         documentexplorer.uploadIsSuccess();
 
     }
+
     @Test
     public void uploadPDF() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -125,6 +128,7 @@ public class TestClass {
 
 
     }
+
     @Test
     public void uploadPNG() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -139,6 +143,7 @@ public class TestClass {
 
 
     }
+
     @Test
     public void uploadMP3file() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -153,6 +158,7 @@ public class TestClass {
 
 
     }
+
     @Test
     public void uploadFakePDFfile() {
         open("https://omniustest.omnius.com/trainer/ui/");
@@ -168,6 +174,6 @@ public class TestClass {
 
     }
 
-        }
+}
 
 
